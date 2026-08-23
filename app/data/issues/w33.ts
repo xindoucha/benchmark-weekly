@@ -1,4 +1,6 @@
-export type ArchivePick = { rank: number; name: string; area: string; date: string; summary: string; url: string };
+import type { DigestItem, DigestIssue } from "../types";
+
+export type ArchivePick = DigestItem;
 
 export const w33Zh: ArchivePick[] = [
   { rank: 1, name: "Evo-Bench", area: "Harness Evolution", date: "08.10", summary: "评测 LLM 能否自主诊断、重写并改进 Agent Harness，并通过留出任务检验改进是否真正可迁移。", url: "https://arxiv.org/abs/2608.09096" },
@@ -23,3 +25,20 @@ export const w33En: ArchivePick[] = [
   { rank: 8, name: "Beyond Naturalness", area: "Speech Evaluation", date: "Aug 10", summary: "A 10-dimension, 860-utterance meta-evaluation benchmark for automated TTS evaluators.", url: "https://arxiv.org/abs/2608.09930" },
   { rank: 9, name: "Frontier AI Measurement Audit", area: "Model Evaluation", date: "Aug 14", summary: "Audits the versioned benchmarks, evidence links and measurement continuity behind frontier-AI forecasting claims.", url: "https://arxiv.org/abs/2608.14903" },
 ];
+
+const issue: DigestIssue = {
+  slug: "w33",
+  week: 33,
+  issue: 1,
+  year: 2026,
+  dateStart: "2026.08.10",
+  dateEnd: "2026.08.16",
+  theme: { zh: "从模型能力走向系统级 Evaluation", en: "From model capability to system-level evaluation" },
+  observation: {
+    zh: "评测对象开始从单一模型扩展到完整 Agent 系统：Prompt、Tools、Memory 与 Control Flow 正在成为可以被独立测量和优化的能力层。",
+    en: "Evaluation is expanding from the model alone to the full agent system: prompts, tools, memory and control flow are becoming capabilities that can be measured and optimized directly.",
+  },
+  items: { zh: w33Zh, en: w33En },
+};
+
+export default issue;

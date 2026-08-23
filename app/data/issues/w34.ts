@@ -1,18 +1,4 @@
-export type DigestItem = {
-  rank: number;
-  name: string;
-  kind: "Benchmark" | "Dataset";
-  area: string;
-  author: string;
-  org: string;
-  published: string;
-  summary: string;
-  scale: string;
-  evaluation: string;
-  why: string;
-  takeaway: string;
-  url: string;
-};
+import type { DigestItem, DigestIssue } from "../types";
 
 export const digestItems: DigestItem[] = [
   { rank: 1, name: "ASI-Bench", kind: "Benchmark", area: "AI Scientist", author: "Junwei Zhou 等", org: "University of Michigan 等", published: "2026.08.18", summary: "测试 AI 能否从执行已知方法，走向自主选择方法并完成可验证的科学研究。", scale: "60 个项目级任务，覆盖 11 个科学领域，由 40+ 位专家投入 31,000+ 小时构建。", evaluation: "同一科研项目设置四级方法指导，逐级撤除人类提示；产物在沙盒中执行，并由经过验证的评分器评估。", why: "把“会不会做”进一步拆成“能否自己决定怎么做”，更接近真正的自主科研能力。", takeaway: "Progressive Guidance Removal、Method Selection / Execution 分离、Sandbox Execution。", url: "https://arxiv.org/abs/2608.17271" },
@@ -37,3 +23,33 @@ export const digestItemsEn: DigestItem[] = [
   { rank: 8, name: "ReRef-3D", kind: "Benchmark", area: "3D Spatial", author: "Mary Lynn Martin et al.", org: "University of Colorado Boulder", published: "2026.08.17", summary: "Places objects in 3D scenes according to spatial referring expressions and physical constraints.", scale: "33,826 instructions, 998 scenes and 16 placement families with direct, one-hop and two-hop references.", evaluation: "Predictions are inserted into the scene; relations are recomputed and checked alongside physical validity.", why: "Ground truth is an acceptable region rather than a single coordinate, better reflecting real spatial tasks.", takeaway: "Region-based Ground Truth, Relation Re-computation, Physical Validity.", url: "https://arxiv.org/abs/2608.16011" },
   { rank: 9, name: "RuleMaze", kind: "Benchmark", area: "Multimodal", author: "Yu Chen et al.", org: "Peking University et al.", published: "2026.08.20", summary: "Requires multimodal models to understand natural-language rules and plan compliant paths through visual mazes.", scale: "Rule complexity and scene combinations are controllable, supporting systematic generation and unseen-rule tests.", evaluation: "Natural-language rules are translated into logic and executable validators that inspect the trajectory step by step.", why: "Separating perception, rule understanding and planning makes model failures easier to diagnose.", takeaway: "Natural Language → Logic → Executable Validator, Disentangled Planning.", url: "https://arxiv.org/abs/2608.20237" },
 ];
+
+const issue: DigestIssue = {
+  slug: "w34",
+  week: 34,
+  issue: 2,
+  year: 2026,
+  dateStart: "2026.08.17",
+  dateEnd: "2026.08.23",
+  theme: { zh: "真实工作流、持续状态与可执行验证", en: "Real workflows, persistent state and executable verification" },
+  observation: {
+    zh: "评测正在从“最终答案是否正确”，转向对完整过程的验证：任务是否来自真实需求、产物能否执行、状态是否持续有效、规则是否真正被遵守。",
+    en: "Evaluation is moving from “was the final answer correct?” toward process-level verification: whether tasks reflect real demand, artifacts execute, state remains current and rules are actually followed.",
+    quote: "Evaluation is becoming executable, stateful & real.",
+  },
+  overview: {
+    zh: [
+      { count: 3, title: "Agent 系统评测", text: "科研 Agent、通用 Agent 与 Coding Agent 都开始进入更真实、更完整的工作流。" },
+      { count: 2, title: "长期状态与安全", text: "Memory 不再只看召回，Safety 也从单次攻击扩展到完整生命周期。" },
+      { count: 4, title: "空间、具身与解释", text: "高精度数据、物理有效性和可执行规则成为新的设计重心。" },
+    ],
+    en: [
+      { count: 3, title: "Agent evaluations", text: "Scientific, general-purpose and coding agents all move toward longer and more realistic workflows." },
+      { count: 2, title: "State and safety", text: "Memory goes beyond recall; safety expands from isolated attacks to the full harness lifecycle." },
+      { count: 4, title: "Spatial, embodied, interpretability", text: "High-fidelity data, physical validity and executable rules become central design choices." },
+    ],
+  },
+  items: { zh: digestItems, en: digestItemsEn },
+};
+
+export default issue;
