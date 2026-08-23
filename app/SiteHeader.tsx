@@ -1,7 +1,7 @@
-export function SiteHeader({ current, lang = "zh" }: { current: "home" | "weekly" | "archive"; lang?: "zh" | "en" }) {
+export function SiteHeader({ current, lang = "zh", alternateHref }: { current: "home" | "weekly" | "archive"; lang?: "zh" | "en"; alternateHref?: string }) {
   const base = lang === "en" ? "/en" : "";
   const labels = lang === "en" ? { home: "Home", weekly: "This Week", archive: "Archive", read: "Read issue", toggle: "中" } : { home: "封面", weekly: "本周内容", archive: "往期归档", read: "阅读本期", toggle: "EN" };
-  const toggleHref = lang === "en" ? (current === "home" ? "/" : `/${current === "weekly" ? "weekly" : "archive"}`) : (current === "home" ? "/en" : `/en/${current === "weekly" ? "weekly" : "archive"}`);
+  const toggleHref = alternateHref ?? (lang === "en" ? (current === "home" ? "/" : `/${current === "weekly" ? "weekly" : "archive"}`) : (current === "home" ? "/en" : `/en/${current === "weekly" ? "weekly" : "archive"}`));
   return <header className="topbar">
     <a className="brand" href={base || "/"}><span className="brand-mark" aria-hidden="true"><b>B</b><i /></span><span>Benchmark Weekly</span></a>
     <nav aria-label="主导航">

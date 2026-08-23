@@ -52,6 +52,24 @@
 .paper-link span { font-size: 13px; }
 .paper-link:hover { background: var(--mint); border-color: var(--mint); color: var(--ink); }
 
+.issue-hero { padding: 64px 5vw 58px; }
+.issue-hero h1 { font-size: clamp(54px, 7vw, 92px); line-height: .94; letter-spacing: -.065em; margin: 30px 0 52px; }
+.back-link { display: inline-block; margin-bottom: 45px; color: var(--muted); font-size: 12px; border-bottom: 1px solid #b8c2b5; padding-bottom: 4px; }
+.issue-note { padding: 42px 5vw; background: var(--ink); color: white; display: grid; grid-template-columns: 150px 1fr; gap: 35px; align-items: start; }
+.issue-note span { font: 10px monospace; color: var(--mint); letter-spacing: .08em; }
+.issue-note p { max-width: 980px; margin: 0; font: 23px/1.55 Georgia, "Songti SC", serif; color: #d7ddd8; }
+.legacy-picks { padding: 90px 5vw 110px; }
+.legacy-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--ink); }
+.legacy-grid article { display: grid; grid-template-columns: 52px 1fr; gap: 18px; padding: 30px 28px 32px 0; border-bottom: 1px solid var(--line); }
+.legacy-grid article:nth-child(even) { padding-left: 28px; border-left: 1px solid var(--line); }
+.legacy-rank { font: 24px Georgia, serif; color: var(--green); }
+.legacy-grid small { font: 9px monospace; color: var(--muted); }
+.legacy-title { display: flex; align-items: center; gap: 14px; margin: 11px 0 9px; flex-wrap: wrap; }
+.legacy-title h3 { margin: 0; font-size: 24px; letter-spacing: -.035em; }
+.legacy-title a { padding: 5px 8px; border: 1px solid #b9c5b5; border-radius: 20px; color: var(--green); font: 700 9px monospace; }
+.legacy-title a:hover { background: var(--mint); border-color: var(--mint); color: var(--ink); }
+.legacy-grid p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+
 .lang-toggle {
   display: grid;
   place-items: center;
@@ -72,4 +90,10 @@
   .lang-toggle { width: 33px; height: 33px; }
   .brand .brand-mark { width: 35px; height: 35px; }
   .picks-section .digest-card { grid-template-columns: 50px 1fr; }
+  .issue-hero { padding: 52px 20px; }
+  .issue-hero h1 { font-size: 50px; }
+  .issue-note { padding: 38px 20px; grid-template-columns: 1fr; }
+  .legacy-picks { padding: 65px 20px 90px; }
+  .legacy-grid { grid-template-columns: 1fr; }
+  .legacy-grid article:nth-child(even) { padding-left: 0; border-left: 0; }
 }

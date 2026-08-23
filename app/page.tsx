@@ -21,7 +21,7 @@ export default function Home() {
     <section className="intro-block">
       <span className="section-no">01 / ABOUT</span>
       <h2>不是论文列表，<br />是可复用的评测洞察。</h2>
-      <div><p>我们关注的不只是“发布了什么”，更是新的评测如何定义任务、构造数据、验证结果，以及它代表了怎样的研究趋势。</p><p>内容来自 <strong>Weekly Benchmark Digest</strong> 的每周筛选结果，并同步沉淀至资料库。</p></div>
+      <div><p>我们关注的不只是“发布了什么”，更是新的评测如何定义任务、构造数据、验证结果，以及它代表了怎样的研究趋势。</p></div>
     </section>
 
     <section className="method-strip">

@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://benchmark-weekly-digest.nealchen811.chatgpt.site"),
-  title: "Benchmark Weekly｜每周 Benchmark 与 Dataset 精选",
+  title: "Benchmark & Dataset 精选周刊",
   description: "每周精选新发布的 Benchmark 和 Dataset，提炼值得关注的评测设计与可借鉴方法。",
   openGraph: {
     title: "Benchmark Weekly",

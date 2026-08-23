@@ -12,7 +12,7 @@ export default function WeeklyPage() {
     <SiteHeader current="weekly" />
     <section className="weekly-head">
       <div className="eyebrow"><span className="pulse" /> ISSUE 02 · 2026 / W34</div>
-      <h1>Benchmark<br />精选周刊</h1>
+      <h1>Benchmark &amp; Dataset<br />精选周刊</h1>
       <div className="weekly-meta">
         <div><span>时间范围</span><strong>2026.08.17 — 08.23</strong></div>
         <div><span>本周入选</span><strong>09 项</strong></div>
