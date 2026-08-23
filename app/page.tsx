@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
+import { sitePath } from "./site-path";
 
 export default function Home() {
   return <main>
@@ -10,11 +11,11 @@ export default function Home() {
         <div className="eyebrow"><span className="pulse" /> CURATED EVERY SUNDAY</div>
         <h1>发现下一代<br /><em>Evaluation</em></h1>
         <p>每周从新发布的研究中，筛出真正值得关注的 Benchmark 与 Dataset，并提炼可以迁移到自研评测中的设计方法。</p>
-        <div className="cover-actions"><a className="primary-btn" href="/weekly">阅读本周精选 <span>↗</span></a><a className="text-btn" href="/archive">浏览往期归档</a></div>
+        <div className="cover-actions"><a className="primary-btn" href={sitePath("/weekly")}>阅读本周精选 <span>↗</span></a><a className="text-btn" href={sitePath("/archive")}>浏览往期归档</a></div>
       </div>
       <div className="cover-art">
         <div className="issue-stamp"><small>CURRENT ISSUE</small><strong>W34</strong><span>09 PICKS / 07 FIELDS</span></div>
-        <Image src="/cover-illustration.png" alt="由数据卡片、坐标和评测节点构成的抽象研究插图" width={1200} height={900} priority />
+        <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/cover-illustration.png`} alt="由数据卡片、坐标和评测节点构成的抽象研究插图" width={1200} height={900} priority />
       </div>
     </section>
 
@@ -33,7 +34,7 @@ export default function Home() {
     <section className="cover-latest">
       <div><span className="section-no">02 / LATEST</span><h2>第 02 期已经发布</h2><p>2026.08.17 — 08.23 · 9 项精选</p></div>
       <div className="latest-topics"><span>AI Scientist</span><span>General Agent</span><span>Coding Agent</span><span>Agent Memory</span><span>Safety</span><span>Embodied AI</span></div>
-      <a href="/weekly">进入本周内容 <span>↗</span></a>
+      <a href={sitePath("/weekly")}>进入本周内容 <span>↗</span></a>
     </section>
     <SiteFooter />
   </main>;

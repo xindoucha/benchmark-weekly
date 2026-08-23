@@ -1,1 +1,3 @@
-export function SiteFooter({ lang = "zh" }: { lang?: "zh" | "en" }) { return <footer><a className="brand" href={lang === "en" ? "/en" : "/"}><span className="brand-mark" aria-hidden="true"><b>B</b><i /></span><span>Benchmark Weekly</span></a><p>{lang === "en" ? "A weekly selection of newly released benchmarks and datasets." : "每周精选新发布的 Benchmark 与 Dataset。"}</p><span>© 2026 xindoucha · UPDATED WEEKLY</span></footer>; }
+import { sitePath } from "./site-path";
+
+export function SiteFooter({ lang = "zh" }: { lang?: "zh" | "en" }) { return <footer><a className="brand" href={sitePath(lang === "en" ? "/en" : "/")}><span className="brand-mark" aria-hidden="true"><b>B</b><i /></span><span>Benchmark Weekly</span></a><p>{lang === "en" ? "A weekly selection of newly released benchmarks and datasets." : "每周精选新发布的 Benchmark 与 Dataset。"}</p><span>© 2026 xindoucha · UPDATED WEEKLY</span></footer>; }

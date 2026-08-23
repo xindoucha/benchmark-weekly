@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { DigestIssue } from "./data";
+import { sitePath } from "./site-path";
 
 export function IssueContent({ issue, lang, archived = false }: { issue: DigestIssue; lang: "zh" | "en"; archived?: boolean }) {
   const [filter, setFilter] = useState<"All" | "Benchmark" | "Dataset">("All");
@@ -14,7 +15,7 @@ export function IssueContent({ issue, lang, archived = false }: { issue: DigestI
 
   return <>
     <section className={archived ? "issue-hero" : "weekly-head"}>
-      {archived && <a href={zh ? "/archive" : "/en/archive"} className="back-link">← {zh ? "返回归档" : "Back to archive"}</a>}
+      {archived && <a href={sitePath(zh ? "/archive" : "/en/archive")} className="back-link">← {zh ? "返回归档" : "Back to archive"}</a>}
       <div className="eyebrow"><span className="pulse" /> ISSUE {String(issue.issue).padStart(2, "0")} · {issue.year} / W{issue.week}</div>
       <h1>{zh ? <>Benchmark &amp; Dataset<br />精选周刊</> : <>Benchmark &amp; Dataset<br />Weekly Digest</>}</h1>
       <div className="weekly-meta">
