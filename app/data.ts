@@ -1,0 +1,27 @@
+export type DigestItem = {
+  rank: number;
+  name: string;
+  kind: "Benchmark" | "Dataset";
+  area: string;
+  author: string;
+  org: string;
+  published: string;
+  summary: string;
+  scale: string;
+  evaluation: string;
+  why: string;
+  takeaway: string;
+  url: string;
+};
+
+export const digestItems: DigestItem[] = [
+  { rank: 1, name: "ASI-Bench", kind: "Benchmark", area: "AI Scientist", author: "Junwei Zhou 等", org: "University of Michigan 等", published: "2026.08.18", summary: "测试 AI 能否从执行已知方法，走向自主选择方法并完成可验证的科学研究。", scale: "60 个项目级任务，覆盖 11 个科学领域，由 40+ 位专家投入 31,000+ 小时构建。", evaluation: "同一科研项目设置四级方法指导，逐级撤除人类提示；产物在沙盒中执行，并由经过验证的评分器评估。", why: "把“会不会做”进一步拆成“能否自己决定怎么做”，更接近真正的自主科研能力。", takeaway: "Progressive Guidance Removal、Method Selection / Execution 分离、Sandbox Execution。", url: "https://arxiv.org/abs/2608.17271" },
+  { rank: 2, name: "StartupBench", kind: "Benchmark", area: "General Agent", author: "Liya Zhu 等", org: "多机构合作", published: "2026.08.18", summary: "从真实 AI 创业产品和用户工作流中，提炼端到端专业任务。", scale: "97 个真实工作流，覆盖 6 个职业领域；每项任务平均包含 25.3 个细粒度 Rubric。", evaluation: "要求交付 XLSX、DOCX、PPTX、PDF 等真实工作产物，用加权原子 Rubric 判断核心要求是否满足。", why: "任务来源已经过市场验证，减少研究者凭空设计任务带来的偏差；最强系统严格成功率仍约 30%。", takeaway: "Market-validated Task Sourcing、Artifact-first Evaluation、Atomic Weighted Rubric。", url: "https://arxiv.org/abs/2608.17800" },
+  { rank: 3, name: "SWE-bench Science", kind: "Benchmark", area: "Coding Agent", author: "Zhipeng Xu 等", org: "复旦大学", published: "2026.08.20", summary: "把 Coding Agent 从通用 GitHub Issue 推进到需要专业科学知识的软件工程。", scale: "119 个任务，来自 98 个 GitHub 仓库，覆盖 20 个科学领域。", evaluation: "包含 Issue-driven、Expert-exploratory、Engineering-integration 三类任务，使用可执行测试衡量 pass@1。", why: "不仅给出成功率，还系统分析科学知识缺口、表层修复、集成不完整等失败机制。", takeaway: "Failure Mechanism Taxonomy、Domain Knowledge Ablation、Repository-level Verification。", url: "https://arxiv.org/abs/2608.19799" },
+  { rank: 4, name: "StateMemBench", kind: "Benchmark", area: "Agent Memory", author: "Xinyi Fan 等", org: "University of Illinois", published: "2026.08.20", summary: "不只测“记没记住”，而是测 Agent 是否知道当前仍然有效的状态。", scale: "234 个多会话场景，覆盖研究协作、购物和个人财务，包含两种对话长度。", evaluation: "闭集评分区分当前状态、已被覆盖的旧状态及其他错误，隔离 state drift。", why: "长对话中的核心问题往往不是检索不到，而是检索到了已经失效的信息。", takeaway: "Current vs. Stale State、Supersession Tracking、Dependency Re-computation。", url: "https://arxiv.org/abs/2608.19652" },
+  { rank: 5, name: "CHIVE", kind: "Dataset", area: "Interpretability", author: "Adam Karvonen 等", org: "Anthropic 等", published: "2026.08.21", summary: "自动发现模型在真实交互中的意外行为，并用反事实编辑验证行为解释。", scale: "每个提示采样 30 次；每项调查执行 5–15 个反事实实验，并由独立 Judge 验证。", evaluation: "预测器根据行为解释判断特定提示编辑是否会改变模型行为，以真实实验结果作为标签。", why: "把看似合理的解释转化为可被实验反驳或支持的预测，避免只评价解释是否“听起来对”。", takeaway: "Counterfactual Experiment、Behavior Discovery、Explanation Verification。", url: "https://alignment.anthropic.com/2026/chive/" },
+  { rank: 6, name: "HarnessRisk", kind: "Benchmark", area: "Agent Safety", author: "Yajing Bai 等", org: "多机构合作", published: "2026.08.18", summary: "从配置到恢复，系统评估 Agent Harness 整个生命周期中的安全风险。", scale: "128 个沙盒案例，覆盖配置、扩展、运行、持久化、行动控制和事故恢复 6 个阶段。", evaluation: "每条轨迹同时评估 Utility、Attack Success、Persistence 与 Detection。", why: "揭示“识别出攻击”与“真正阻止攻击”是两件事，且安全性属于模型与 Harness 的组合。", takeaway: "Safety / Utility 双指标、Lifecycle Coverage、Persistent-state Audit。", url: "https://arxiv.org/abs/2608.17597" },
+  { rank: 7, name: "HiPHI", kind: "Dataset", area: "Embodied AI", author: "Jiahao Ji 等", org: "清华大学等", published: "2026.08.17", summary: "面向人形智能的大规模高精度全身运动与物体交互数据集。", scale: "600+ 小时运动数据，提供亚毫米级空间标记追踪和 Mesh 级物体轨迹。", evaluation: "从动作空间多样性、交互落地、物体一致性及 Physical AI 应用多个维度评估。", why: "在互联网视频的规模与实验室动捕的精度之间，提供更完整的数据基础。", takeaway: "Frame-guided Coverage、High-fidelity Capture、Physical Consistency。", url: "https://arxiv.org/abs/2608.16222" },
+  { rank: 8, name: "ReRef-3D", kind: "Benchmark", area: "3D Spatial", author: "Mary Lynn Martin 等", org: "University of Colorado Boulder", published: "2026.08.17", summary: "根据空间指代表达，在 3D 场景中生成满足语义与物理约束的放置位置。", scale: "33,826 条指令、998 个场景、16 类放置关系，包含直接及一跳、两跳指代。", evaluation: "将预测位置插入场景，重新计算空间关系，同时检查关系满足度与物理有效性。", why: "正确答案不是唯一坐标，而是一个可接受区域，更贴近真实空间任务。", takeaway: "Region-based Ground Truth、Relation Re-computation、Physical Validity。", url: "https://arxiv.org/abs/2608.16011" },
+  { rank: 9, name: "RuleMaze", kind: "Benchmark", area: "Multimodal", author: "Yu Chen 等", org: "北京大学等", published: "2026.08.20", summary: "让多模态模型在视觉迷宫中理解自然语言规则，并规划合规路径。", scale: "可控制规则复杂度与场景组合，支持系统生成新规则和未见规则测试。", evaluation: "自动将自然语言规则翻译成逻辑表示和可执行 Validator，逐步验证规划轨迹。", why: "把视觉感知、规则理解和路径规划拆开，能更清楚地定位模型失败在哪里。", takeaway: "Natural Language → Logic → Executable Validator、Disentangled Planning。", url: "https://arxiv.org/abs/2608.20237" },
+];

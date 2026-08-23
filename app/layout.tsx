@@ -13,8 +13,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://benchmark-weekly-digest.nealchen811.chatgpt.site"),
   title: "Benchmark Weekly｜每周 Benchmark 与 Dataset 精选",
   description: "每周精选新发布的 Benchmark 和 Dataset，提炼值得关注的评测设计与可借鉴方法。",
+  openGraph: {
+    title: "Benchmark Weekly",
+    description: "Curate newly released benchmarks and datasets every week.",
+    type: "website",
+    images: [{ url: "/og.png", width: 1456, height: 1088, alt: "Benchmark Weekly" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Benchmark Weekly",
+    description: "Curate newly released benchmarks and datasets every week.",
+    images: ["/og.png"],
+  },
 };
 
 export default function RootLayout({
