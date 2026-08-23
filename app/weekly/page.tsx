@@ -12,7 +12,7 @@ export default function WeeklyPage() {
     <SiteHeader current="weekly" />
     <section className="weekly-head">
       <div className="eyebrow"><span className="pulse" /> ISSUE 02 · 2026 / W34</div>
-      <h1>本周 Benchmark<br />精选周刊</h1>
+      <h1>Benchmark<br />精选周刊</h1>
       <div className="weekly-meta">
         <div><span>时间范围</span><strong>2026.08.17 — 08.23</strong></div>
         <div><span>本周入选</span><strong>09 项</strong></div>
@@ -42,11 +42,10 @@ export default function WeeklyPage() {
           <div className="card-rank"><span>{String(item.rank).padStart(2,"0")}</span>{item.rank <= 3 && <small>TOP PICK</small>}</div>
           <div className="card-body">
             <div className="card-tags"><span>{item.kind}</span><span>{item.area}</span></div>
-            <h3>{item.name}</h3><p className="card-summary">{item.summary}</p>
+            <div className="title-row"><h3>{item.name}</h3><a className="paper-link" href={item.url} target="_blank" rel="noreferrer" aria-label={`阅读 ${item.name} 原始发布`}>{item.url.includes("arxiv.org") ? "arXiv" : "原文"} <span>↗</span></a></div><p className="card-summary">{item.summary}</p>
             <dl className="basic-info"><div><dt>作者</dt><dd>{item.author}</dd></div><div><dt>机构</dt><dd>{item.org}</dd></div><div><dt>发布时间</dt><dd>{item.published}</dd></div></dl>
             <div className="detail-grid"><div><span>规模 / 特点</span><p>{item.scale}</p></div><div><span>评测方式</span><p>{item.evaluation}</p></div><div><span>为什么值得关注</span><p>{item.why}</p></div><div className="takeaway"><span>可借鉴点</span><p>{item.takeaway}</p></div></div>
           </div>
-          <a className="source-link" href={item.url} target="_blank" rel="noreferrer" aria-label={`阅读 ${item.name} 原始发布`}>↗</a>
         </article>)}
       </div>
     </section>
