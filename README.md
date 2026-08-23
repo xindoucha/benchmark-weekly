@@ -101,6 +101,17 @@ npm run dev
 npm run build
 ```
 
+## 自动部署
+
+项目通过 GitHub Actions 自动部署到 Cloudflare Workers。每次代码推送到 `main` 分支时都会依次安装依赖、执行生产构建并发布；也可以在 GitHub Actions 页面手动触发部署。
+
+首次使用前，需要在 GitHub 仓库的 **Settings → Secrets and variables → Actions** 中添加：
+
+- `CLOUDFLARE_API_TOKEN`：具有 Workers 编辑权限的 Cloudflare API Token
+- `CLOUDFLARE_ACCOUNT_ID`：Cloudflare Account ID
+
+工作流配置位于 `.github/workflows/deploy.yml`。
+
 ## 技术栈
 
 - React 19
