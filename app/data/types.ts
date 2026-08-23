@@ -14,6 +14,9 @@ export type DigestItem = {
   evaluation?: string;
   why?: string;
   takeaway?: string;
+  result?: string;
+  attention?: string;
+  projectUrl?: string;
   url: string;
 };
 

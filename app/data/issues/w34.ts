@@ -24,6 +24,33 @@ export const digestItemsEn: DigestItem[] = [
   { rank: 9, name: "RuleMaze", kind: "Benchmark", area: "Multimodal", author: "Yu Chen et al.", org: "Peking University et al.", published: "2026.08.20", summary: "Requires multimodal models to understand natural-language rules and plan compliant paths through visual mazes.", scale: "Rule complexity and scene combinations are controllable, supporting systematic generation and unseen-rule tests.", evaluation: "Natural-language rules are translated into logic and executable validators that inspect the trajectory step by step.", why: "Separating perception, rule understanding and planning makes model failures easier to diagnose.", takeaway: "Natural Language → Logic → Executable Validator, Disentangled Planning.", url: "https://arxiv.org/abs/2608.20237" },
 ];
 
+const zhUpdates: Record<string, Partial<DigestItem>> = {
+  "ASI-Bench": { attention:"★★★★★", projectUrl:"https://asibench.apexin.ai/", result:"18 个 Agent-Model 配置中，平均分从完整指导下的 50.91 降至只给方法名时的 29.10，自主决定方法时降至 26.62。" },
+  "StartupBench": { org:"ByteDance Seed 等", attention:"★★★★★", projectUrl:"https://startupbench.github.io/", result:"以 Score ≥ 90 作为成功阈值时，最强模型成功率约 30%。" },
+  "SWE-bench Science": { org:"Shanghai Innovation Institute 等", attention:"★★★★★", result:"最强 Agent 的 pass@1 仍低于 50%。" },
+  "StateMemBench": { org:"未知", attention:"★★★★☆", result:"StateMem 在 DeepSeek-V4-Flash 上将 current-state accuracy 从 0.205 提升至 0.363；应用于六种 memory / retrieval backend 时提升 32–67 个百分点。" },
+  "CHIVE": { org:"Anthropic Fellows Program 等", published:"2026.08.17", attention:"★★★★☆", projectUrl:"https://github.com/adamkarvonen/chive", url:"https://arxiv.org/abs/2608.16747", result:"三类 activation-reading interpretability tools 未带来明显提升；反事实实验数据训练对 held-out / OOD 场景有泛化收益。" },
+  "HarnessRisk": { org:"UNC Chapel Hill 等", attention:"★★★★☆", result:"不同配置 Attack Success Rate 为 12.6%–80.9%，同时 Utility 仍保持 75.0%–97.6%。" },
+  "HiPHI": { org:"National University of Singapore 等", attention:"★★★★☆", projectUrl:"https://huggingface.co/datasets/noitomrobotics/HiPHI", scale:"约 617.5 小时高精度动作数据，其中约 245.7 小时为 HOI；提供同步 Object Trajectory、OBJ Mesh、文本描述与丰富 Metadata。" },
+  "ReRef-3D": { attention:"★★★★☆", result:"Fine-tuning 后 LLaVA-3D、3D-LLM、PlaceIt3D 的 valid placement 分别约为 68.3%、31.6%、22.4%。" },
+  "RuleMaze": { org:"Peking University 等", attention:"★★★★☆", projectUrl:"https://github.com/oceanflowlab/RuleMaze", result:"自动生成 Validator 在人工检查前达到约 93.3% correctness，最终所有 Validator 均人工验证。" },
+};
+
+const enUpdates: Record<string, Partial<DigestItem>> = {
+  "ASI-Bench": { attention:"★★★★★", projectUrl:"https://asibench.apexin.ai/", result:"Across 18 agent-model configurations, the mean score falls from 50.91 with full guidance to 29.10 with only a method name and 26.62 when the method must be selected autonomously." },
+  "StartupBench": { org:"ByteDance Seed et al.", attention:"★★★★★", projectUrl:"https://startupbench.github.io/", result:"With Score ≥ 90 as the success threshold, the strongest model succeeds on only about 30% of tasks." },
+  "SWE-bench Science": { org:"Shanghai Innovation Institute et al.", attention:"★★★★★", result:"The strongest agent remains below 50% pass@1." },
+  "StateMemBench": { org:"Unknown", attention:"★★★★☆", result:"StateMem raises current-state accuracy on DeepSeek-V4-Flash from 0.205 to 0.363 and improves six memory/retrieval backends by 32–67 percentage points." },
+  "CHIVE": { org:"Anthropic Fellows Program et al.", published:"2026.08.17", attention:"★★★★☆", projectUrl:"https://github.com/adamkarvonen/chive", url:"https://arxiv.org/abs/2608.16747", result:"Three activation-reading interpretability tools show no clear uplift, while training on counterfactual experiments improves held-out and OOD generalization." },
+  "HarnessRisk": { org:"UNC Chapel Hill et al.", attention:"★★★★☆", result:"Attack success ranges from 12.6% to 80.9% while utility remains between 75.0% and 97.6%." },
+  "HiPHI": { org:"National University of Singapore et al.", attention:"★★★★☆", projectUrl:"https://huggingface.co/datasets/noitomrobotics/HiPHI", scale:"About 617.5 hours of high-precision motion, including roughly 245.7 hours of HOI, with synchronized object trajectories, meshes, text and metadata." },
+  "ReRef-3D": { attention:"★★★★☆", result:"After fine-tuning, valid placement reaches about 68.3% for LLaVA-3D, 31.6% for 3D-LLM and 22.4% for PlaceIt3D." },
+  "RuleMaze": { attention:"★★★★☆", projectUrl:"https://github.com/oceanflowlab/RuleMaze", result:"Generated validators reach about 93.3% correctness before review; all final validators are human-verified." },
+};
+
+for (const item of digestItems) Object.assign(item, zhUpdates[item.name]);
+for (const item of digestItemsEn) Object.assign(item, enUpdates[item.name]);
+
 const issue: DigestIssue = {
   slug: "w34",
   week: 34,
