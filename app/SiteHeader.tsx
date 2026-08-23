@@ -1,13 +1,14 @@
-import Link from "next/link";
-
-export function SiteHeader({ current }: { current: "home" | "weekly" | "archive" }) {
+export function SiteHeader({ current, lang = "zh" }: { current: "home" | "weekly" | "archive"; lang?: "zh" | "en" }) {
+  const base = lang === "en" ? "/en" : "";
+  const labels = lang === "en" ? { home: "Home", weekly: "This Week", archive: "Archive", read: "Read issue", toggle: "中" } : { home: "封面", weekly: "本周内容", archive: "往期归档", read: "阅读本期", toggle: "EN" };
+  const toggleHref = lang === "en" ? (current === "home" ? "/" : `/${current === "weekly" ? "weekly" : "archive"}`) : (current === "home" ? "/en" : `/en/${current === "weekly" ? "weekly" : "archive"}`);
   return <header className="topbar">
-    <Link className="brand" href="/"><span className="brand-mark">B/</span><span>Benchmark Weekly</span></Link>
+    <a className="brand" href={base || "/"}><span className="brand-mark">B/</span><span>Benchmark Weekly</span></a>
     <nav aria-label="主导航">
-      <Link className={current === "home" ? "active" : ""} href="/">封面</Link>
-      <Link className={current === "weekly" ? "active" : ""} href="/weekly">本周内容</Link>
-      <Link className={current === "archive" ? "active" : ""} href="/archive">往期归档</Link>
+      <a className={current === "home" ? "active" : ""} href={base || "/"}>{labels.home}</a>
+      <a className={current === "weekly" ? "active" : ""} href={`${base}/weekly`}>{labels.weekly}</a>
+      <a className={current === "archive" ? "active" : ""} href={`${base}/archive`}>{labels.archive}</a>
     </nav>
-    <Link className="nav-cta" href="/weekly">阅读本期 <span>↗</span></Link>
+    <div className="nav-actions"><a className="lang-toggle" href={toggleHref} aria-label={lang === "en" ? "切换至中文" : "Switch to English"}>{labels.toggle}</a><a className="nav-cta" href={`${base}/weekly`}>{labels.read} <span>↗</span></a></div>
   </header>;
 }

@@ -1,0 +1,25 @@
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.lang-toggle {
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  font: 700 10px monospace;
+}
+
+.lang-toggle:hover {
+  background: var(--mint);
+  border-color: var(--mint);
+}
+
+@media (max-width: 800px) {
+  .nav-actions { gap: 0; }
+  .lang-toggle { width: 33px; height: 33px; }
+}
