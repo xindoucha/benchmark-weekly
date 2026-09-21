@@ -1,9 +1,15 @@
 import Image from "next/image";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
+import { currentIssue } from "./data";
 import { sitePath } from "./site-path";
 
 export default function Home() {
+  const items = currentIssue.items.zh;
+  const picks = String(items.length).padStart(2, "0");
+  const topics = [...new Set(items.map((item) => item.area.split("/")[0].trim()))];
+  const fields = String(topics.length).padStart(2, "0");
+
   return <main>
     <SiteHeader current="home" />
     <section className="cover-hero">
@@ -14,7 +20,7 @@ export default function Home() {
         <div className="cover-actions"><a className="primary-btn" href={sitePath("/weekly")}>阅读本周精选 <span>↗</span></a><a className="text-btn" href={sitePath("/archive")}>浏览往期归档</a></div>
       </div>
       <div className="cover-art">
-        <div className="issue-stamp"><small>CURRENT ISSUE</small><strong>W34</strong><span>09 PICKS / 07 FIELDS</span></div>
+        <div className="issue-stamp"><small>CURRENT ISSUE</small><strong>W{currentIssue.week}</strong><span>{picks} PICKS / {fields} FIELDS</span></div>
         <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/cover-illustration.png`} alt="由数据卡片、坐标和评测节点构成的抽象研究插图" width={1200} height={900} priority />
       </div>
     </section>
@@ -32,8 +38,8 @@ export default function Home() {
     </section>
 
     <section className="cover-latest">
-      <div><span className="section-no">02 / LATEST</span><h2>第 02 期已经发布</h2><p>2026.08.17 — 08.23 · 9 项精选</p></div>
-      <div className="latest-topics"><span>AI Scientist</span><span>General Agent</span><span>Coding Agent</span><span>Agent Memory</span><span>Safety</span><span>Embodied AI</span></div>
+      <div><span className="section-no">02 / LATEST</span><h2>第 {String(currentIssue.issue).padStart(2, "0")} 期已经发布</h2><p>{currentIssue.dateStart} — {currentIssue.dateEnd.slice(5)} · {items.length} 项精选</p></div>
+      <div className="latest-topics">{topics.map((topic) => <span key={topic}>{topic}</span>)}</div>
       <a href={sitePath("/weekly")}>进入本周内容 <span>↗</span></a>
     </section>
     <SiteFooter />
