@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1700" viewBox="0 0 1400 1700">
+  <rect width="1400" height="1700" fill="#ffffff"/>
+  <style>
+    .text { font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #173c2c; }
+    .title { font-size: 50px; font-weight: 700; }
+    .subtitle { font-size: 21px; fill: #536d5f; }
+    .head { font-size: 18px; font-weight: 700; }
+    .name { font-size: 21px; font-weight: 700; }
+    .body { font-size: 17px; fill: #294a3a; }
+    .small { font-size: 14px; fill: #294a3a; }
+    .rank { font-size: 24px; font-weight: 700; fill: #ffffff; text-anchor: middle; }
+    .trend-label { font-size: 27px; font-weight: 700; }
+    .trend { font-size: 18px; fill: #294a3a; }
+  </style>
+
+  <rect x="25" y="22" width="1350" height="132" rx="27" fill="#eef6e9" stroke="#acd3a6" stroke-width="1.5"/>
+  <text class="text title" x="60" y="82">Benchmark 精选周刊 · 第7期</text>
+  <text class="text subtitle" x="60" y="125">2026/09/21–09/27  ｜  Agent · Robotics · World Model · Dataset · Audio</text>
+
+  <rect x="25" y="176" width="1350" height="52" rx="15" fill="#dcefd4"/>
+  <text class="text head" x="44" y="209">排名</text>
+  <text class="text head" x="115" y="209">Benchmark / Dataset</text>
+  <text class="text head" x="360" y="209">方向</text>
+  <text class="text head" x="520" y="209">简要介绍</text>
+  <text class="text head" x="1035" y="209">发布时间</text>
+  <text class="text head" x="1150" y="209">发布机构</text>
+
+  <!-- row 1 -->
+  <rect x="25" y="244" width="1350" height="128" rx="18" fill="#eff8eb" stroke="#acd3a6" stroke-width="1.4"/>
+  <rect x="44" y="281" width="52" height="52" rx="10" fill="#2f855a"/>
+  <text class="text rank" x="70" y="316">1</text>
+  <text class="text name" x="115" y="314"><tspan x="115">EmbodiedSWE-</tspan><tspan x="115" dy="25">Bench</tspan></text>
+  <text class="text body" x="360" y="301"><tspan x="360">Coding Agent /</tspan><tspan x="360" dy="24">机器人</tspan></text>
+  <text class="text body" x="520" y="281"><tspan x="520">6 个套件、28 个任务、17 种具身形态；</tspan><tspan x="520" dy="24">将验证通过的解决方案扩展为 VLA</tspan><tspan x="520" dy="24">训练数据。</tspan></text>
+  <text class="text body" x="1035" y="314">2026/09/23</text>
+  <text class="text small" x="1150" y="288"><tspan x="1150">ByteDance Seed、</tspan><tspan x="1150" dy="20">Yale、Princeton</tspan><tspan x="1150" dy="20">等</tspan></text>
+
+  <!-- row 2 -->
+  <rect x="25" y="380" width="1350" height="128" rx="18" fill="#eff8eb" stroke="#acd3a6" stroke-width="1.4"/>
+  <rect x="44" y="417" width="52" height="52" rx="10" fill="#2f855a"/>
+  <text class="text rank" x="70" y="452">2</text>
+  <text class="text name" x="115" y="450">RRSI</text>
+  <text class="text body" x="360" y="450">Agent Harness</text>
+  <text class="text body" x="520" y="417"><tspan x="520">在 8 个 Benchmark 上研究评测过拟合；</tspan><tspan x="520" dy="24">OOD 最高提升 4.7 分，策略 token</tspan><tspan x="520" dy="24">减少约 30%。</tspan></text>
+  <text class="text body" x="1035" y="450">2026/09/21</text>
+  <text class="text small" x="1150" y="424"><tspan x="1150">Google Cloud AI</tspan><tspan x="1150" dy="20">Research 等</tspan></text>
+
+  <!-- row 3 -->
+  <rect x="25" y="516" width="1350" height="128" rx="18" fill="#eff8eb" stroke="#acd3a6" stroke-width="1.4"/>
+  <rect x="44" y="553" width="52" height="52" rx="10" fill="#2f855a"/>
+  <text class="text rank" x="70" y="588">3</text>
+  <text class="text name" x="115" y="586">Era by Eon</text>
+  <text class="text body" x="360" y="586">企业 Agent</text>
+  <text class="text body" x="520" y="553"><tspan x="520">跨 CRM、通话记录等系统恢复隐藏知识，</tspan><tspan x="520" dy="24">推断任何单条记录都没有直接写明的</tspan><tspan x="520" dy="24">信息。</tspan></text>
+  <text class="text body" x="1035" y="586">2026/09/24</text>
+  <text class="text body" x="1150" y="586">Eon</text>
+
+  <!-- row 4 -->
+  <rect x="25" y="652" width="1350" height="128" rx="18" fill="#ffffff" stroke="#acd3a6" stroke-width="1.4"/>
+  <rect x="44" y="689" width="52" height="52" rx="10" fill="#63a37b"/>
+  <text class="text rank" x="70" y="724">4</text>
+  <text class="text name" x="115" y="722">TriWorldBench</text>
+  <text class="text body" x="360" y="709"><tspan x="360">多视角</tspan><tspan x="360" dy="24">世界模型</tspan></text>
+  <text class="text body" x="520" y="689"><tspan x="520">500 个同步 episode、50 个双臂任务、</tspan><tspan x="520" dy="24">19 项指标，检验头部与双腕三路视频</tspan><tspan x="520" dy="24">是否属于同一个物理世界。</tspan></text>
+  <text class="text body" x="1035" y="722">2026/09/22</text>
+  <text class="text small" x="1150" y="696"><tspan x="1150">Peking University、</tspan><tspan x="1150" dy="20">Tsinghua</tspan><tspan x="1150" dy="20">University 等</tspan></text>
+
+  <!-- row 5 -->
+  <rect x="25" y="788" width="1350" height="128" rx="18" fill="#ffffff" stroke="#acd3a6" stroke-width="1.4"/>
+  <rect x="44" y="825" width="52" height="52" rx="10" fill="#63a37b"/>
+  <text class="text rank" x="70" y="860">5</text>
+  <text class="text name" x="115" y="858">MolDesignBench</text>
+  <text class="text body" x="360" y="845"><tspan x="360">分子设计</tspan><tspan x="360" dy="24">Agent</tspan></text>
+  <text class="text body" x="520" y="825"><tspan x="520">2,000 个分子生成与优化任务、17 个</tspan><tspan x="520" dy="24">化学工具；最佳 Agent 成功率仅约</tspan><tspan x="520" dy="24">43%。</tspan></text>
+  <text class="text body" x="1035" y="858">2026/09/23</text>
+  <text class="text small" x="1150" y="832"><tspan x="1150">Korea University、</tspan><tspan x="1150" dy="20">LG AI Research</tspan></text>
+
+  <!-- row 6 -->
+  <rect x="25" y="924" width="1350" height="128" rx="18" fill="#ffffff" stroke="#acd3a6" stroke-width="1.4"/>
+  <rect x="44" y="961" width="52" height="52" rx="10" fill="#63a37b"/>
+  <text class="text rank" x="70" y="996">6</text>
+  <text class="text name" x="115" y="994">MVCAP-Bench</text>
+  <text class="text body" x="360" y="981"><tspan x="360">GUI Agent /</tspan><tspan x="360" dy="24">动态视觉</tspan></text>
+  <text class="text body" x="520" y="961"><tspan x="520">600 个动态 CAPTCHA；人类成功率</tspan><tspan x="520" dy="24">99.6%，最佳 GUI Agent 仅 16.8%，</tspan><tspan x="520" dy="24">揭示明显的时间视觉感知差距。</tspan></text>
+  <text class="text body" x="1035" y="994">2026/09/23</text>
+  <text class="text small" x="1150" y="958"><tspan x="1150">Shanghai Jiao Tong</tspan><tspan x="1150" dy="20">University、Shanghai</tspan><tspan x="1150" dy="20">AI Laboratory</tspan></text>
+
+  <!-- row 7 -->
+  <rect x="25" y="1060" width="1350" height="128" rx="18" fill="#ffffff" stroke="#acd3a6" stroke-width="1.4"/>
+  <rect x="44" y="1097" width="52" height="52" rx="10" fill="#63a37b"/>
+  <text class="text rank" x="70" y="1132">7</text>
+  <text class="text name" x="115" y="1130">Ajar</text>
+  <text class="text body" x="360" y="1117"><tspan x="360">Agent 安全 /</tspan><tspan x="360" dy="24">权限</tspan></text>
+  <text class="text body" x="520" y="1097"><tspan x="520">在攻击成功率与正常任务效用之外增加</tspan><tspan x="520" dy="24">“开放权限”，衡量任务不需要却仍被</tspan><tspan x="520" dy="24">防御系统放行的危险权限。</tspan></text>
+  <text class="text body" x="1035" y="1130">2026/09/22</text>
+  <text class="text small" x="1150" y="1094"><tspan x="1150">University of</tspan><tspan x="1150" dy="20">Washington、Ohio</tspan><tspan x="1150" dy="20">State、Microsoft</tspan><tspan x="1150" dy="20">Research</tspan></text>
+
+  <!-- row 8 -->
+  <rect x="25" y="1196" width="1350" height="128" rx="18" fill="#ffffff" stroke="#acd3a6" stroke-width="1.4"/>
+  <rect x="44" y="1233" width="52" height="52" rx="10" fill="#63a37b"/>
+  <text class="text rank" x="70" y="1268">8</text>
+  <text class="text name" x="115" y="1266">RGBD20K</text>
+  <text class="text body" x="360" y="1253"><tspan x="360">RGB-D</tspan><tspan x="360" dy="24">语义分割</tspan></text>
+  <text class="text body" x="520" y="1233"><tspan x="520">20,000 对 RGB-D 图像、160 个细粒度</tspan><tspan x="520" dy="24">类别；重新检查并修正历史标签噪声，</tspan><tspan x="520" dy="24">提供高质量 Ground Truth。</tspan></text>
+  <text class="text body" x="1035" y="1266">2026/09/24</text>
+  <text class="text small" x="1150" y="1240"><tspan x="1150">University of</tspan><tspan x="1150" dy="20">North Texas</tspan></text>
+
+  <!-- row 9 -->
+  <rect x="25" y="1332" width="1350" height="128" rx="18" fill="#ffffff" stroke="#acd3a6" stroke-width="1.4"/>
+  <rect x="44" y="1369" width="52" height="52" rx="10" fill="#63a37b"/>
+  <text class="text rank" x="70" y="1404">9</text>
+  <text class="text name" x="115" y="1402">COSED</text>
+  <text class="text body" x="360" y="1389"><tspan x="360">开放词汇</tspan><tspan x="360" dy="24">声音事件检测</tspan></text>
+  <text class="text body" x="520" y="1369"><tspan x="520">统一评测 6 个时序标注任务；COSED 在</tspan><tspan x="520" dy="24">5 项领先，第 6 项与最佳方法持平，覆盖</tspan><tspan x="520" dy="24">固定词表与自由文本查询。</tspan></text>
+  <text class="text body" x="1035" y="1402">2026/09/24</text>
+  <text class="text small" x="1150" y="1380"><tspan x="1150">Meta Reality Labs</tspan><tspan x="1150" dy="20">Research</tspan></text>
+
+  <rect x="25" y="1480" width="1350" height="188" rx="22" fill="#eef6e9" stroke="#acd3a6" stroke-width="1.4"/>
+  <text class="text trend-label" x="62" y="1532">本周趋势</text>
+  <text class="text trend" x="220" y="1525"><tspan x="220">Agent 正从 Benchmark 的解题者进一步变成训练环境与监督数据的生成器；</tspan><tspan x="220" dy="27">评测也从最终 Pass Rate，扩展到隐藏知识、跨视角一致性、权限暴露、</tspan><tspan x="220" dy="27">时间视觉感知和结构化失败模式。</tspan></text>
+  <text class="text small" x="1325" y="1640" text-anchor="end">来源：心豆茶</text>
+</svg>
