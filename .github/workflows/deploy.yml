@@ -44,8 +44,8 @@ jobs:
         run: npm run build:pages
         env:
           GITHUB_PAGES: "true"
-          NEXT_PUBLIC_BASE_PATH: /benchmark-weekly
-          NEXT_PUBLIC_SITE_URL: https://xindoucha.github.io/benchmark-weekly/
+          NEXT_PUBLIC_BASE_PATH: ""
+          NEXT_PUBLIC_SITE_URL: https://benchmark.xindoucha.com/
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
