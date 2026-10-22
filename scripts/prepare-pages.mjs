@@ -22,7 +22,7 @@ if (baseSegment) {
 await writeFile(path.join(clientDir, ".nojekyll"), "");
 
 const indexHtml = await readFile(path.join(clientDir, "index.html"), "utf8");
-const assetPattern = /(?:href|src)="([^\"]*\/_next\/[^\"]+)"/g;
+const assetPattern = /(?:href|src)="([^"]*\/_next\/[^"]+)"/g;
 const assetUrls = [
   ...indexHtml.matchAll(assetPattern),
 ].map((match) => match[1]);

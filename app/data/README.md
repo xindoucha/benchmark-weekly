@@ -25,9 +25,10 @@ SVG using stable filenames:
 - `overview.png` — final image used for publishing and library sync;
 - `overview.svg` — editable source for future corrections.
 
-`source.md` is required for new syncs. Overview files are included when the
-source issue provides them; older issues may not have every asset.
+`source.md` is required for new syncs. Every published issue must have both
+overview files. Run `npm run generate:overviews` after data changes; the build
+automatically copies PNGs into the generated `public/overviews/` directory.
 
-Overview images use a portrait composition while preserving the established
-green rounded-card visual style. The detailed layout rules live in
+Overview images use the established W42 portrait table composition. The
+detailed layout rules live in
 `docs/weekly-overview-layout.md`.

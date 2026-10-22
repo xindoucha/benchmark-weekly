@@ -24,6 +24,26 @@ const en: DigestItem[] = [
   { ...zh[8], author:"Xiaohongshu Dots Studio et al.", summary:"Evaluates whether life-assistant agents remain proactive, persistent and plan-consistent over several weeks of changing conditions.", scale:"200 long-horizon tasks across ten life domains with 22 mock services, an autonomous clock and silent changes.", evaluation:"Weighted checks inspect the agent's final state, action timeliness and implicit-constraint compliance.", why:"Directly evaluates persistent, proactive and long-running agents.", takeaway:"Autonomous clocks, silent environment changes, implicit constraints, timeliness and state-based grading." },
 ];
 
+const verifiedOrgs = {
+  zh: {
+    "DiG-bench": "Thinking About Thinking 等 8 家机构",
+    LigBench: "上海交大 X-LANCE / 上海创新研究院",
+    "LongEarth-Bench": "武汉大学 / 西安电子科技大学",
+    "MBA-Bench": "KAIST AI",
+    "SWE-Bench ProMax": "上海交大等 7 家机构",
+  },
+  en: {
+    "DiG-bench": "Thinking About Thinking et al. (8 institutions)",
+    LigBench: "SJTU X-LANCE / Shanghai Innovation Institute",
+    "LongEarth-Bench": "Wuhan University / Xidian University",
+    "MBA-Bench": "KAIST AI",
+    "SWE-Bench ProMax": "SJTU et al. (7 institutions)",
+  },
+} as const;
+
+for (const item of zh) item.org = verifiedOrgs.zh[item.name as keyof typeof verifiedOrgs.zh] ?? item.org;
+for (const item of en) item.org = verifiedOrgs.en[item.name as keyof typeof verifiedOrgs.en] ?? item.org;
+
 const issue: DigestIssue = {
   slug:"w33", week:33, issue:1, year:2026, dateStart:"2026.08.10", dateEnd:"2026.08.16",
   theme:{ zh:"Discovery、Tool Use 与 Long-Horizon Agent", en:"Discovery, tool use and long-horizon agents" },

@@ -177,6 +177,20 @@ const en: DigestItem[] = [
   { rank: 9, name: "SynthGait-19K", kind: "Dataset", area: "Video / Human Motion / Clinical Gait", author: "Soroush Mehraban et al.", org: "UHN / University of Toronto et al.", published: "2026.09.08", summary: "Generates diverse walking videos from real MoCap while preserving paired physical motion and clinical gait ground truth.", scale: "19,272 videos from 6,427 MoCap sequences and 437 subjects, with SMPL motion and six gait-parameter labels.", evaluation: "Compares RGB, pose, biomechanics and HMR methods across viewpoint, scale and synthetic-to-real shift.", result: "Synthetic supervision transfers to real video; spatial gait parameters are more sensitive to visual domain shift.", why: "It pairs controllable visual generation with real physical motion for scalable clinical-gait training and diagnosis.", takeaway: "MoCap-conditioned Video, Physical Ground Truth, Viewpoint Control, Synthetic-to-real Transfer.", attention: "★★★★☆", projectUrl: "https://huggingface.co/papers/2609.08108", url: "https://arxiv.org/abs/2609.08108" },
 ];
 
+const verifiedOrgs = {
+  zh: {
+    "Harbor Adapters + Harbor-Index": "Harbor Framework 社区",
+    CausalArena: "南京大学",
+  },
+  en: {
+    "Harbor Adapters + Harbor-Index": "Harbor Framework community",
+    CausalArena: "Nanjing University",
+  },
+} as const;
+
+for (const item of zh) item.org = verifiedOrgs.zh[item.name as keyof typeof verifiedOrgs.zh] ?? item.org;
+for (const item of en) item.org = verifiedOrgs.en[item.name as keyof typeof verifiedOrgs.en] ?? item.org;
+
 const issue: DigestIssue = {
   slug: "w37",
   week: 37,

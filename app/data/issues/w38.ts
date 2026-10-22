@@ -24,6 +24,28 @@ const en: DigestItem[] = [
   { rank: 9, name: "RoleBreak", kind: "Benchmark", area: "Role-playing Agent / Long-dialogue Safety", author: "Yuqi Wang et al.", org: "Unknown", published: "2026.09.15", summary: "Measures how persona consistency, emotional targets and safety boundaries degrade over long role-play conversations.", scale: "310 roles, 6,688 human-verified turns, 11,743 fine-grained criteria and 1,856 emotion-target turns.", evaluation: "Applies turn-level criteria to nine configurations and records when the first persona and safety failures occur.", result: "For the strongest setup, first persona and safety failures occur after 10.4 and 11.6 turns on average.", why: "Reliable short conversations do not guarantee stable long-term role interaction.", takeaway: "Long-dialogue Evaluation, Per-turn Criteria, Persona Consistency, Safety Degradation.", attention: "★★★★☆", projectUrl: "https://huggingface.co/papers/2609.16614", url: "https://arxiv.org/abs/2609.16614" },
 ];
 
+const verifiedOrgs = {
+  zh: {
+    ScienceIDE: "PhAI Labs / AItonomy Foundation",
+    BVB: "罗切斯特大学等 4 家机构",
+    ImpossibleRubrics: "新加坡国立大学 / 北京大学 / 中科院自动化所 / 京东",
+    RiskChainBench: "百度等 6 家机构",
+    HearInContext: "OPPO AI Center",
+    RoleBreak: "香港大学 / Kami AI",
+  },
+  en: {
+    ScienceIDE: "PhAI Labs / AItonomy Foundation",
+    BVB: "University of Rochester et al. (4 institutions)",
+    ImpossibleRubrics: "NUS / Peking University / CASIA / JD.com",
+    RiskChainBench: "Baidu et al. (6 institutions)",
+    HearInContext: "OPPO AI Center",
+    RoleBreak: "The University of Hong Kong / Kami AI",
+  },
+} as const;
+
+for (const item of zh) item.org = verifiedOrgs.zh[item.name as keyof typeof verifiedOrgs.zh] ?? item.org;
+for (const item of en) item.org = verifiedOrgs.en[item.name as keyof typeof verifiedOrgs.en] ?? item.org;
+
 const issue: DigestIssue = {
   slug: "w38", week: 38, issue: 6, year: 2026, dateStart: "2026.09.14", dateEnd: "2026.09.20",
   theme: { zh: "从静态问答走向可执行、可回放的评测", en: "From static questions to executable, replayable evaluation" },

@@ -51,6 +51,9 @@ const enUpdates: Record<string, Partial<DigestItem>> = {
 for (const item of digestItems) Object.assign(item, zhUpdates[item.name]);
 for (const item of digestItemsEn) Object.assign(item, enUpdates[item.name]);
 
+digestItems.find((item) => item.name === "StateMemBench")!.org = "伊利诺伊大学厄巴纳-香槟分校";
+digestItemsEn.find((item) => item.name === "StateMemBench")!.org = "University of Illinois Urbana-Champaign";
+
 const issue: DigestIssue = {
   slug: "w34",
   week: 34,

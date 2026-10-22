@@ -44,3 +44,23 @@ test("renders current and archived issue content in both languages", async () =>
   assert.match(await archived.text(), /BrickBench/);
   assert.match(await english.text(), /From question answering to systems in motion/);
 });
+
+test("renders the overview gallery in both languages with issue links and images", async () => {
+  const [chinese, english] = await Promise.all([
+    render("/overviews"),
+    render("/en/overviews"),
+  ]);
+
+  assert.equal(chinese.status, 200);
+  assert.equal(english.status, 200);
+
+  const chineseHtml = await chinese.text();
+  const englishHtml = await english.text();
+  assert.match(chineseHtml, /一张图/);
+  assert.match(chineseHtml, /href="\/weekly"/);
+  assert.match(chineseHtml, /href="\/archive\/w33"/);
+  assert.match(chineseHtml, /src="\/overviews\/w42\.png"/);
+  assert.match(englishHtml, /One image/);
+  assert.match(englishHtml, /href="\/en\/weekly"/);
+  assert.match(englishHtml, /href="\/en\/archive\/w33"/);
+});

@@ -172,6 +172,9 @@ const en: DigestItem[] = [
   { rank: 9, name: "MechBench-36", kind: "Benchmark", area: "3D / Hard-surface / Shape-as-Code", author: "Youtian Lin et al.", org: "Nanjing University et al.", published: "2026.08.26", summary: "Evaluates mechanical image-to-3D and text-to-3D modeling with structured parts, sharp geometry and editable programs.", scale: "36 hard cases with references, prompts, evaluation specs, provenance and geometric-challenge tags.", evaluation: "Uses a shared rerender rig and blind assembly judge across visual, semantic and geometric metrics.", why: "Gradeability specs define single-view limits while separating visual, geometric, structural and execution quality.", takeaway: "Gradeability Specs, Reference Provenance, Shared Rerender Rigs, Geometry Tags.", attention: "★★★★☆", projectUrl: "https://spatiaos.github.io/projects/procedura/", url: "https://arxiv.org/abs/2608.26238" },
 ];
 
+zh.find((item) => item.name === "SWE Refactor Bench")!.org = "Navers Lab / Einsia.AI / 清华大学";
+en.find((item) => item.name === "SWE Refactor Bench")!.org = "Navers Lab / Einsia.AI / Tsinghua University";
+
 const issue: DigestIssue = {
   slug: "w35",
   week: 35,

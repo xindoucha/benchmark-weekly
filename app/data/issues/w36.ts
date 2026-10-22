@@ -175,6 +175,9 @@ const en: DigestItem[] = [
   { rank: 9, name: "SonicCaps", kind: "Dataset", area: "Audio-Language Dataset / Retrieval", author: "Zineb Lahrichi et al.", org: "Sony CTC / Télécom Paris et al.", published: "2026.09.02", summary: "Creates diverse captions with different detail, style and semantic labels for the same audio clip.", scale: "About 700K audio clips and 15M captions, averaging roughly 24 descriptions per clip.", evaluation: "Uses human quality checks and CLAP retrieval and zero-shot classification to validate multi-caption sampling.", result: "Multi-caption sampling consistently improves retrieval and zero-shot classification.", why: "It treats multiple valid descriptions as a supervision distribution for multimodal caption datasets.", takeaway: "One-to-many Captions, Structured Diversity, Human Quality Checks, Sampling Strategies.", attention: "★★★★☆", projectUrl: "https://huggingface.co/datasets/Zineb/SonicCaps", url: "https://arxiv.org/abs/2609.02343" },
 ];
 
+zh.find((item) => item.name === "TIC-Bench")!.org = "哈尔滨工业大学 / 华为诺亚方舟实验室 / 南开大学";
+en.find((item) => item.name === "TIC-Bench")!.org = "Harbin Institute of Technology / Huawei Noah's Ark Lab / Nankai University";
+
 const issue: DigestIssue = {
   slug: "w36",
   week: 36,
