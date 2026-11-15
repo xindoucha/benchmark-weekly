@@ -97,7 +97,7 @@ function buildSvg(issue) {
   const left = 42;
   const tableTop = 228;
   const headHeight = 58;
-  const rowHeight = 142;
+  const rowHeight = 150;
   const columns = [72, 320, 190, 535, 135, 264];
   const starts = [left];
   for (let index = 0; index < columns.length - 1; index += 1) starts.push(starts[index] + columns[index]);
@@ -128,9 +128,9 @@ function buildSvg(issue) {
     for (let column = 1; column < starts.length; column += 1) svg.push(`<line x1="${starts[column]}" y1="${y}" x2="${starts[column]}" y2="${y + rowHeight}" stroke="${LINE}"/>`);
     svg.push(textBlock({ x: starts[0] + 28, y: y + 58, lines: [String(item.rank)], size: 28, lineHeight: 30, weight: 760, fill: GREEN }));
 
-    const nameLines = wrapText(item.name, 12, 2);
-    svg.push(textBlock({ x: starts[1] + 14, y: y + 30, lines: nameLines, size: 24, lineHeight: 26, weight: 760 }));
-    const authorY = y + 30 + nameLines.length * 26 + 2;
+    const nameLines = wrapText(item.name, 12, 3);
+    svg.push(textBlock({ x: starts[1] + 14, y: y + 30, lines: nameLines, size: 22, lineHeight: 23, weight: 760 }));
+    const authorY = y + 30 + nameLines.length * 23 + 2;
     const authorLines = wrapText(item.author ?? "", 17, 2);
     svg.push(textBlock({ x: starts[1] + 14, y: authorY, lines: authorLines, size: 16, lineHeight: 18, fill: "#56806f" }));
     svg.push(textBlock({ x: starts[1] + 14, y: authorY + authorLines.length * 18 + 2, lines: wrapText(item.url, 19, 2), size: 14, lineHeight: 16, fill: GREEN }));
