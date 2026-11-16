@@ -17,7 +17,7 @@ async function render(pathname) {
   );
 }
 
-test("renders the latest W45 issue on the homepage", async () => {
+test("renders the latest W46 issue on the homepage", async () => {
   const response = await render("/");
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
@@ -25,8 +25,8 @@ test("renders the latest W45 issue on the homepage", async () => {
   const html = await response.text();
   assert.match(html, /Benchmark &amp; Dataset 精选周刊/);
   assert.match(html, /CURRENT ISSUE/);
-  assert.match(html, />W<!-- -->45</);
-  assert.match(html, /第 <!-- -->13<!-- --> 期已经发布/);
+  assert.match(html, />W<!-- -->46</);
+  assert.match(html, /第 <!-- -->14<!-- --> 期已经发布/);
 });
 
 test("renders current and archived issue content in both languages", async () => {
@@ -40,9 +40,9 @@ test("renders current and archived issue content in both languages", async () =>
   assert.equal(archived.status, 200);
   assert.equal(english.status, 200);
 
-  assert.match(await weekly.text(), /Multi-step SWE/);
+  assert.match(await weekly.text(), /Embodied First Exam/);
   assert.match(await archived.text(), /BrickBench/);
-  assert.match(await english.text(), /From static answers to stateful tasks and hard verification/);
+  assert.match(await english.text(), /From robot success rates to closed-loop evidence and decision reliability/);
 });
 
 test("renders the overview gallery in both languages with issue links and images", async () => {
@@ -59,7 +59,7 @@ test("renders the overview gallery in both languages with issue links and images
   assert.match(chineseHtml, /一张图/);
   assert.match(chineseHtml, /href="\/weekly"/);
   assert.match(chineseHtml, /href="\/archive\/w33"/);
-  assert.match(chineseHtml, /src="\/overviews\/w45\.png"/);
+  assert.match(chineseHtml, /src="\/overviews\/w46\.png"/);
   assert.match(englishHtml, /One image/);
   assert.match(englishHtml, /href="\/en\/weekly"/);
   assert.match(englishHtml, /href="\/en\/archive\/w33"/);
