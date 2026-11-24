@@ -71,7 +71,8 @@
 .legacy-title a:hover { background: var(--mint); border-color: var(--mint); color: var(--ink); }
 .legacy-grid p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
 
-.lang-toggle {
+.lang-toggle,
+.github-link {
   display: grid;
   place-items: center;
   width: 35px;
@@ -81,14 +82,21 @@
   font: 700 10px monospace;
 }
 
-.lang-toggle:hover {
+.github-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+.lang-toggle:hover,
+.github-link:hover {
   background: var(--mint);
   border-color: var(--mint);
 }
 
 @media (max-width: 800px) {
-  .nav-actions { gap: 0; }
-  .lang-toggle { width: 33px; height: 33px; }
+  .nav-actions { gap: 8px; }
+  .lang-toggle,
+  .github-link { width: 33px; height: 33px; }
   .brand .brand-mark { width: 35px; height: 35px; }
   .picks-section .digest-card { grid-template-columns: 50px 1fr; }
   .issue-hero { padding: 52px 20px; }
