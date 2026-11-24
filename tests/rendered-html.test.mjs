@@ -29,6 +29,7 @@ test("renders the latest W47 issue on the homepage", async () => {
   assert.match(html, /第 <!-- -->15<!-- --> 期已经发布/);
   assert.match(html, /href="https:\/\/github\.com\/xindoucha\/benchmark-weekly"/);
   assert.match(html, /在 GitHub 查看本项目/);
+  assert.match(html, /rel="icon" href="\/favicon\.svg" type="image\/svg\+xml"/);
 });
 
 test("renders current and archived issue content in both languages", async () => {
